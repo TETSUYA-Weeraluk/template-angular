@@ -1,0 +1,31 @@
+<div class="w-full flex flex-col gap-4 p-4">
+  <h1 class="text-3xl text-center">Pokemon !!</h1>
+  <div class="flex gap-4 items-center justify-center flex-wrap">
+    <div class="absolute z-10">
+      <p-progressSpinner *ngIf="isLoading" ariaLabel="loading" />
+    </div>
+    <div
+      class="p-4 rounded-md shadow-md border gap-4 flex flex-col items-center"
+      *ngFor="let item of pokemons"
+    >
+      <img
+        [src]="'https://img.pokemondb.net/artwork/' + item.name + '.jpg'"
+        [alt]="'pokemon' + item.name"
+        class="w-48 h-48 object-contain"
+      />
+      <h2 class="text-xl text-center">{{ item.name }}</h2>
+      <p-button
+        label="More detail"
+        (onClick)="navigateToPokemonDetail(item.name)"
+      />
+    </div>
+  </div>
+  <p-paginator
+    (onPageChange)="onPageChange($event)"
+    [first]="page"
+    [rows]="limit"
+    [totalRecords]="count"
+    [rowsPerPageOptions]="rowsPerPageOptions"
+    [showFirstLastIcon]="false"
+  />
+</div>
