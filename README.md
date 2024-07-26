@@ -1,5 +1,7 @@
 # TemplateAngular
 
+Template angular : folder structure , Fetch Api, Route, Tailwind, PrimeNg,
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.8.
 
 ## Development server
